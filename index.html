@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nugget Premium Khas Nusantara | Nuggyuuu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Animated Background Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.1;
+        }
+
+        /* Navigation Bar - Enhanced */
+        .navbar {
+            background: linear-gradient(135deg, #FEDE58 0%, #FFE87C 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 20px rgba(254, 222, 88, 0.3);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #000000 !important;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            color: #000000 !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #000000;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-icon {
+            font-size: 1.2rem;
+            color: #000000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-icon:hover {
+            transform: rotate(90deg) scale(1.2);
+        }
+
+        /* Enhanced Search Bar with Animation */
+        #searchBar {
+            background: linear-gradient(135deg, #FFF4C4 0%, #FEDE58 100%);
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #searchBar input {
+            border-radius: 50px;
+            border: 3px solid #000;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        #searchBar input:focus {
+            box-shadow: 0 0 20px rgba(254, 222, 88, 0.5);
+            transform: scale(1.02);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem 0;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #FEDE58 0%, #FFF4C4 50%, #FFE87C 100%);
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section img{
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 10%);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+            background: linear-gradient(45deg, #000000, #333333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.2s ease;
+            line-height: 1.8;
+        }
+
+        .btn-cta {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            color: #FEDE58;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            animation: fadeInUp 1.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(254, 222, 88, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-cta:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            color: #FFF;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Product Variants - 3D Effect */
+        .variants-section {
+            padding: 100px 0;
+            position: relative;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 4rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, #FEDE58, transparent);
+            border-radius: 10px;
+        }
+
+        .variant-card {
+            text-align: center; 
+            padding: 3rem;
+            border-radius: 25px;
+            transition: all 0.5s ease;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .variant-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(254,222,88,0.1) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.6s ease;
+        }
+
+        .variant-card:hover::before {
+            transform: scale(1);
+        }
+
+        .variant-card:hover {
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(254, 222, 88, 0.3);
+        }
+
+        .variant-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+            transition: all 0.5s ease;
+        }
+
+        .variant-card:hover .variant-icon {
+            transform: rotateY(360deg) scale(1.2);
+        }
+
+        .variant-icon {
+             width: 100%;
+             height: 100%; 
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             overflow: hidden;
+        }
+
+        .variant-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 5px 5px 5px 5px; 
+        }
+
+        .variant-card:hover .variant-icon img {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .variant-card h4 {
+            min-height: 48px; 
+            line-height: 1.4;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Brand Advantages - Card Style */
+        .advantages-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .advantage-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border-left: 5px solid #FEDE58;
+        }
+
+        .advantage-item:hover {
+            transform: translateX(15px);
+            box-shadow: 0 10px 30px rgba(254, 222, 88, 0.3);
+        }
+
+        .advantage-icon {
+            font-size: 3.5rem;
+            color: #FEDE58;
+            margin-right: 2rem;
+            min-width: 80px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .advantage-item:hover .advantage-icon {
+            transform: rotate(360deg);
+        }
+
+        /* Product Grid - Modern Cards */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            padding: 4rem 0;
+        }
+
+        @media (max-width: 992px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .product-card {
+            border: none;
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: white;
+            position: relative;
+        }
+
+        .product-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(254,222,88,0.1) 0%, rgba(255,232,124,0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .product-card:hover::after {
+            opacity: 1;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(254, 222, 88, 0.4);
+        }
+
+        .product-img {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #FEDE58;
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .product-rating {
+            color: #FFC107;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FEDE58;
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Product Detail Modal */
+        .modal-content {
+            border-radius: 25px;
+            border: none;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #FEDE58 0%, #FFE87C 100%);
+            border: none;
+            padding: 2rem;
+        }
+
+        .modal-body {
+            padding: 2.5rem;
+        }
+
+        .product-detail-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .product-specs {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+        }
+
+        .product-specs h6 {
+            color: #000;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Recipe Cards - Enhanced */
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            padding: 4rem 0;
+        }
+
+        .recipe-card {
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+            background: white;
+            position: relative;
+        }
+
+        .recipe-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(254,222,88,0.2) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .recipe-card:hover::before {
+            opacity: 1;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .recipe-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .recipe-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .recipe-card:hover .recipe-img img {
+            transform: scale(1.1);
+        }
+
+        .recipe-time-badge {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(0,0,0,0.8);
+            color: #FEDE58;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+
+        /* Order Form - Premium Design */
+        .order-card {
+            max-width: 700px;
+            margin: 4rem auto;
+            padding: 3.5rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            background: white;
+            position: relative;
+        }
+
+        .order-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(254,222,88,0.05) 0%, transparent 100%);
+            border-radius: 30px;
+            pointer-events: none;
+        }
+
+        .form-control, .form-select {
+            border-radius: 15px;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #FEDE58;
+            box-shadow: 0 0 20px rgba(254, 222, 88, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+
+        /* Social Icons - Animated */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .social-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #FEDE58 0%, #FFE87C 100%);
+            color: #000000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(254, 222, 88, 0.3);
+            position: relative;
+        }
+
+        .social-icon::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #000000;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.4s ease;
+            z-index: -1;
+        }
+
+        .social-icon:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .social-icon:hover {
+            color: #FEDE58;
+            transform: translateY(-8px) rotate(360deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Profile Section - Modern Layout */
+        .profile-section {
+            padding: 4rem 0;
+        }
+
+        .profile-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 2.5rem;
+            border-radius: 25px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border-left: 6px solid #FEDE58;
+        }
+
+        .profile-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px rgba(254, 222, 88, 0.2);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: #FEDE58;
+            margin-right: 1.5rem;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        /* Footer - Premium Dark Mode */
+        footer {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #FEDE58;
+            padding: 4rem 0 1.5rem;
+            margin-top: 5rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, #FEDE58, transparent);
+        }
+
+        .footer-section h5 {
+            color: #FEDE58;
+            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .footer-section h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #FEDE58;
+        }
+
+        .footer-link {
+            color: #FEDE58;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 0;
+        }
+
+        .footer-link::before {
+            content: '→';
+            position: absolute;
+            left: -20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #FFF;
+            padding-left: 25px;
+        }
+
+        .footer-link:hover::before {
+            left: 0;
+            opacity: 1;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(254, 222, 88, 0.3);
+            color: #FEDE58;
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #FEDE58 0%, #FFE87C 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            border: 8px solid rgba(0,0,0,0.1);
+            border-top-color: #000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Hidden pages */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Scroll to Top Button */
+        #scrollTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #FEDE58 0%, #FFE87C 100%);
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(254, 222, 88, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        #scrollTop:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(254, 222, 88, 0.6);
+        }
+
+        /* Quantity Selector */
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #000;
+            background: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: #FEDE58;
+            transform: scale(1.1);
+        }
+
+        .quantity-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        /* Notification Toast */
+        .toast-notification {
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            background: linear-gradient(135deg, #000 0%, #333 100%);
+            color: #FEDE58;
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: none;
+            z-index: 9998;
+            animation: slideInRight 0.4s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Filter Buttons */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 30px;
+            border: 2px solid #000;
+            background: white;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #FEDE58;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(254, 222, 88, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loadingScreen">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="toastNotification">
+        <i class="fas fa-check-circle"></i> <span id="toastMessage"></span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showPage('home')">
+                <img src="Assets/Logo Nuggyuuu (no bg).png" alt="Logo Nuggyuuu"
+                     style="height: 50px; width: auto; margin-right: 10px;"> 
+                 NUGGYUUU
+                </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" onclick="showPage('home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('product')">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('recipe')">Recipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('order')">Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('profile')">Profile</a>
+                    </li>
+                </ul>
+                <div class="search-container">
+                    <i class="fas fa-search search-icon" onclick="toggleSearch()"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div id="searchBar" style="display:none;">
+        <div class="container">
+            <input type="text" class="form-control" id="searchInput" placeholder="Cari produk atau resep..." onkeyup="searchContent()">
+        </div>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page active">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 hero-content">
+                        <h1>Nugget Premium Khas Nusantara</h1>
+                        <p>Nuggyuuu hadir dari keinginan untuk menghadirkan cemilan nugget ayam yang lebih menarik, variatif, dan sesuai dengan selera anak muda masa kini. </p>
+                        <button class="btn btn-cta" onclick="showPage('product')">
+                            <span style="position: relative; z-index: 1;">Lihat Produk</span>
+                        </button>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <div style="font-size: 15rem; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2));">
+                            <img src="Assets/Logo Nuggyuuu (no bg).png" alt="Nuggyuuu Logo" style="width: 80%"; height: auto;>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Variants Section -->
+        <section class="variants-section">
+            <div class="container">
+                <h2 class="section-title">Varian Produk Kami</h2>
+                <div class="row">
+                    <!-- Varian 1: Mayo Chili Nugget  -->
+                    <div class="col-md-4 mb-4">
+                        <div class="variant-card">
+                            <div class="variant-icon">
+                                <img src="Assets/Mayo Chili Nugget.jpg" alt="Gambar Chili Nugget">
+                            </div>
+                            <h4><b>Mayo Chili Nugget</b></h4>
+                            <p>Nugget ayam renyah berpadu saus mayo pedas creamy, menghadirkan sensasi pedas</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="variant-card">
+                            <div class="variant-icon">
+                                <img src="Assets/Mayo Seaweed Nugget.jpg" alt="Gambar Seaweed Nugget">
+                            </div>
+                            <h4><b>Mayo Seaweed Nugget</b></h4>
+                            <p>Kombinasi ayam gurih dan aroma rumput laut, disajikan dengan nuansa hijau lembut</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="variant-card">
+                            <div class="variant-icon">
+                                <img src="Assets/Mayo Onion Nugget.jpg" alt="Gambar Onion Nugget">
+                            </div>
+                            <h4><b>Mayo Onion Nugget</b></h4>
+                            <p>Topping bawang goreng dan mayo gurih, menonjolkan cita rasa khas Nusantara</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advantages Section -->
+        <section class="advantages-section">
+            <div class="container">
+                <h2 class="section-title">Keunggulan NUGGYUUU</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="advantage-item">
+                            <div class="advantage-icon">✓</div>
+                            <div>
+                                <h5><b>100% Bahan Alami</b></h5>
+                                <p>Tanpa pengawet, pewarna, dan bahan kimia berbahaya untuk kesehatan keluarga</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">✓</div>
+                            <div>
+                                <h5><b>Kaya Nutrisi</b></h5>
+                                <p>Tinggi protein dan vitamin untuk tumbuh kembang anak yang optimal</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">✓</div>
+                            <div>
+                                <h5><b>Halal & Higienis</b></h5>
+                                <p>Bersertifikat halal MUI dan diproduksi dengan standar kebersihan tinggi</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="advantage-item">
+                            <div class="advantage-icon">✓</div>
+                            <div>
+                                <h5><b>Praktis & Mudah</b>></h5>
+                                <p>Siap dimasak dalam hitungan menit untuk keluarga sibuk modern</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">✓</div>
+                            <div>
+                                <h5><b>Harga Terjangkau</b></h5>
+                                <p>Kualitas premium dengan harga yang ramah di kantong keluarga Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">✓</div>
+                            <div>
+                                <h5><b>Tersedia Frozen</b></h5>
+                                <p>Tahan lama dengan kualitas terjaga sempurna di freezer hingga 6 bulan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PRODUCT PAGE -->
+    <div id="productPage" class="page">
+        <div class="breadcrumb-section">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li class="breadcrumb-item active">Product</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title" style="margin-top: 3rem;">Produk Kami</h2>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="filterProducts('all')">Semua</button>
+                <button class="filter-btn" onclick="filterProducts('ayam')">Ayam</button>
+                <button class="filter-btn" onclick="filterProducts('seafood')">Seafood</button>
+                <button class="filter-btn" onclick="filterProducts('sayur')">Sayur</button>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+                <!-- Product 1 -->
+                <div class="card product-card" data-category="ayam">
+                    <span class="product-badge">Best Seller</span>
+                    <div class="product-img">
+                        <img src="Assets/Mayo Chili Nugget.jpg" alt="Gambar Chili">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mayo Chili Nugget</h5>
+                        <div class="product-rating">
+                            ⭐⭐⭐⭐⭐ (4.8/5)
+                        </div>
+                        <p class="card-text">Nugget ayam renyah berpadu saus mayo pedas creamy, menghadirkan sensasi gurih pedas</p>
+                        <div class="product-price">Rp 35.000</div>
+                        <button class="btn btn-cta w-100 mt-3" onclick="showProductDetail('Mayo Chili Nugget')">
+                            <span style="position: relative; z-index: 1;">Lihat Detail</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="card product-card" data-category="ayam">
+                    <span class="product-badge">Hot</span>
+                    <div class="product-img">
+                        <img src="Assets/Mayo Seaweed Nugget.jpg" alt="Gambar Seaweed">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mayo Seaweed Nugget</h5>
+                        <div class="product-rating">
+                            ⭐⭐⭐⭐⭐ (4.7/5)
+                        </div>
+                        <p class="card-text">Kombinasi ayam gurih dan aroma rumput laut, disajikan dengan nuansa hijau lembut memberi kesan segar dan natural.</p>
+                        <div class="product-price">Rp 37.000</div>
+                        <button class="btn btn-cta w-100 mt-3" onclick="showProductDetail('Mayo Seaweed Nugget')">
+                            <span style="position: relative; z-index: 1;">Lihat Detail</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="card product-card" data-category="ayam">
+                    <span class="product-badge">Premium</span>
+                    <div class="product-img">
+                        <img src="Assets/Mayo Onion Nugget.jpg" alt="Gambar Onion">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mayo Onion Nugget</h5>
+                        <div class="product-rating">
+                            ⭐⭐⭐⭐⭐ (4.9/5)
+                        </div>
+                        <p class="card-text">Topping bawang goreng dan mayo gurih, menonjolkan cita rasa khas Nusantara dengan tampilan warna keemasan.</p>
+                        <div class="product-price">Rp 42.000</div>
+                        <button class="btn btn-cta w-100 mt-3" onclick="showProductDetail('Mayo Onion Nugget')">
+                            <span style="position: relative; z-index: 1;">Lihat Detail</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="card product-card" data-category="seafood">
+                    <span class="product-badge">Healthy</span>
+                    <div class="product-img">
+                        <img src="Assets/Mayo Shrimp Roll Nugget.jpg" alt="Nugget Ikan Tuna">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mayo Tuna Fish</h5>
+                        <div class="product-rating">
+                            ⭐⭐⭐⭐⭐ (4.6/5)
+                        </div>
+                        <p class="card-text">Kaya omega-3 dari ikan tuna segar pilihan untuk kecerdasan anak</p>
+                        <div class="product-price">Rp 40.000</div>
+                        <button class="btn btn-cta w-100 mt-3" onclick="showProductDetail('Nugget isi Ikan Tuna')">
+                            <span style="position: relative; z-index: 1;">Lihat Detail</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="card product-card" data-category="seafood">
+                    <span class="product-badge">Premium</span>
+                    <div class="product-img">
+                        <img src="Assets/Mayo Shrimp Roll Nugget.jpg" alt="Nugget Udang">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mayo Shrimp Roll Nugget</h5>
+                        <div class="product-rating">
+                            ⭐⭐⭐⭐⭐ (4.8/5)
+                        </div>
+                        <p class="card-text">Udang segar dengan tekstur renyah di luar dan lembut di dalam</p>
+                        <div class="product-price">Rp 45.000</div>
+                        <button class="btn btn-cta w-100 mt-3" onclick="showProductDetail('Nugget isi Udang')">
+                            <span style="position: relative; z-index: 1;">Lihat Detail</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="card product-card" data-category="sayur">
+                    <span class="product-badge">Healthy</span>
+                    <div class="product-img">
+                        <img src="Assets/Mayo Vegetarian Nugget.jpg" alt="Nugget Sayur Mix">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mayo Vegetarian Nugget</h5>
+                        <div class="product-rating">
+                            ⭐⭐⭐⭐⭐ (4.5/5)
+                        </div>
+                        <p class="card-text">Kombinasi wortel, brokoli, dan jagung manis untuk menu sehat</p>
+                        <div class="product-price">Rp 33.000</div>
+                        <button class="btn btn-cta w-100 mt-3" onclick="showProductDetail('Nugget isi Sayur')">
+                            <span style="position: relative; z-index: 1;">Lihat Detail</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="card product-card" data-category="sayur">
+                    <div class="product-img">
+                        <img src="Assets/Mayo Carrot Nugget.jpg" alt="Nugget Ayam Wortel">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mayo Carrot Nugget</h5>
+                        <div class="product-rating">
+                            ⭐⭐⭐⭐⭐ (4.7/5)
+                        </div>
+                        <p class="card-text">Kombinasi ayam dengan wortel segar bergizi tinggi</p>
+                        <div class="product-price">Rp 36.000</div>
+                        <button class="btn btn-cta w-100 mt-3" onclick="showProductDetail('Nugget isi Wortel')">
+                            <span style="position: relative; z-index: 1;">Lihat Detail</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="card product-card" data-category="sayur">
+                    <div class="product-img">
+                        <img src="Assets/Mayo Corn Nugget.jpg" alt="Nugget Ayam Jagung">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mayo Corn Nugget</h5>
+                        <div class="product-rating">
+                            ⭐⭐⭐⭐⭐ (4.6/5)
+                        </div>
+                        <p class="card-text">Manis alami dari jagung manis pilihan berkualitas premium</p>
+                        <div class="product-price">Rp 36.000</div>
+                        <button class="btn btn-cta w-100 mt-3" onclick="showProductDetail('Mayo Cor Nugget')">
+                            <span style="position: relative; z-index: 1;">Lihat Detail</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="card product-card" data-category="ayam">
+                    <span class="product-badge">New</span>
+                    <div class="product-img">
+                        <img src="Assets/Mayo Smokey Nugget.jpg" alt="Nugget Ayam Smokey">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mayo Smokey Nugget</h5>
+                        <div class="product-rating">
+                            ⭐⭐⭐⭐⭐ (4.8/5)
+                        </div>
+                        <p class="card-text">Rasa smokey yang khas dan menggugah selera dengan teknik modern</p>
+                        <div class="product-price">Rp 38.000</div>
+                        <button class="btn btn-cta w-100 mt-3" onclick="showProductDetail('Mayo Smokey Nugget')">
+                            <span style="position: relative; z-index: 1;">Lihat Detail</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalProductName"></h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="modalProductImage" class="product-detail-img" src="" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <h3 id="modalProductPrice" style="color: #FEDE58; background: #000; padding: 10px 20px; border-radius: 15px; display: inline-block;"></h3>
+                            
+                            <div class="product-specs">
+                                <h6>Spesifikasi Produk:</h6>
+                                <p id="modalProductDesc"></p>
+                            </div>
+
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                                <span class="quantity-value" id="quantityValue">1</span>
+                                <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                            </div>
+
+                            <button class="btn btn-cta w-100 mt-3" onclick="addToCart()">
+                                <span style="position: relative; z-index: 1;">
+                                    <i class="fas fa-shopping-cart"></i> Tambah ke Keranjang
+                                </span>
+                            </button>
+
+                            <button class="btn btn-cta w-100 mt-2" onclick="buyNow()">
+                                <span style="position: relative; z-index: 1;">
+                                    <i class="fas fa-bolt"></i> Beli Sekarang
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RECIPE PAGE -->
+    <div id="recipePage" class="page">
+        <div class="breadcrumb-section">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li class="breadcrumb-item active">Recipe</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title" style="margin-top: 3rem;">Masak Cepat, Rasa Hebat</h2><br/>
+            <div class="recipe-grid">
+                <div class="card recipe-card">
+                    <div class="recipe-img">
+                        <img src="Assets/Nugget Homemade.jpg" alt="Nugget Rumahan">
+                        <span class="recipe-time-badge"><i class="fas fa-clock"></i> 15 Menit</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Nugget Ayam Homeade</h5>
+                        <p class="card-text">Nugget buatan sendiri tanpa pengawet, dilapisi tepung crispy dan daging ayam lembut. Anak-anak suka, dompet pun tetap aman!</p>
+                        <span class="badge bg-warning text-dark">Mudah</span>
+                        <span class="badge bg-success ms-2">Favorit Anak</span>
+                    </div>
+                </div>
+
+                <div class="card recipe-card">
+                    <div class="recipe-img">
+                        <img src="Assets/Tom Yum Fried Rice.jpg" alt="Nasi Goreng Tom Yum">
+                        <span class="recipe-time-badge"><i class="fas fa-clock"></i> 10 Menit</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Tom Yum Fried Rice</h5>
+                        <p class="card-text">Nasi goreng dengan sentuhan rempah tom yum khas Thailand, bercampur rasa pedas, asam, dan harum daun jeruk.</p>
+                        <span class="badge bg-warning text-dark">Mudah</span>
+                        <span class="badge bg-info ms-2">Praktis</span>
+                    </div>
+                </div>
+
+                <div class="card recipe-card">
+                    <div class="recipe-img">
+                        <img src="Assets/Tumis Buncis Udang.jpg" alt="Tumis Buncis">
+                        <span class="recipe-time-badge"><i class="fas fa-clock"></i> 20 Menit</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Tumis Buncis Udang</h5>
+                        <p class="card-text">Perpaduan buncis segar dan udang gurih dalam satu wajan. Ditumis dengan sedikit cabai, menghadirkan cita rasa rumahan yang khas.</p>
+                        <span class="badge bg-info text-dark">Sedang</span>
+                        <span class="badge bg-success ms-2">Sehat</span>
+                    </div>
+                </div>
+
+                <div class="card recipe-card">
+                    <div class="recipe-img">
+                        <img src="Assets/Ayam Goreng Tepung.jpg" alt="Ayam Tepung">
+                        <span class="recipe-time-badge"><i class="fas fa-clock"></i> 25 Menit</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Ayam Goreng Tepung</h5>
+                        <p class="card-text">Hidangan ayam yang populer dan disukai oleh banyak orang, setiap potongan ayam yang dilumuri bumbu dan digoreng hingga renyah hingga berwarna keemasan.</p>
+                        <span class="badge bg-info text-dark">Sedang</span>
+                        <span class="badge bg-danger ms-2">Premium</span>
+                    </div>
+                </div>
+
+                <div class="card recipe-card">
+                    <div class="recipe-img">
+                        <img src="Assets/Telur Balado.jpg" alt="Telur Pedes ini nih">
+                        <span class="recipe-time-badge"><i class="fas fa-clock"></i> 20 Menit</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Telur Balado</h5>
+                        <p class="card-text">Menu masakan yang sangat menggugah selera. Telur balado bisa dengan telur rebus atau telur ceplok yang dicampur dengan sambalado yang gurih dan nikmat.</p>
+                        <span class="badge bg-info text-dark">Sedang</span>
+                        <span class="badge bg-danger ms-2">Pedas</span>
+                    </div>
+                </div>
+
+                <div class="card recipe-card">
+                    <div class="recipe-img">
+                        <img src="Assets/Perkedel Kentang.jpg" alt="Perkedel Kentang Gacor">
+                        <span class="recipe-time-badge"><i class="fas fa-clock"></i> 15 Menit</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Perkedel Kentang</h5>
+                        <p class="card-text">Perkedel kentang memiliki tekstur yang lembut di dalam dan renyah di luar, dengan rasa gurih yang khas. Menjadi primadona bagi semua orang.</p>
+                        <span class="badge bg-warning text-dark">Mudah</span>
+                        <span class="badge bg-info ms-2">Bekal Sekolah</span>
+                    </div>
+                </div>
+
+                <div class="card recipe-card">
+                    <div class="recipe-img">
+                        <img src="Assets/Sayur Lodeh.jpg" alt="Sayur Lodeh">
+                        <span class="recipe-time-badge"><i class="fas fa-clock"></i> 30 Menit</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Sayur Lodeh</h5>
+                        <p class="card-text">Rasa gurih dan kaya dari santan berpadu dengan aroma rempah-rempah, menciptakan hidangan yang lezat dan memuaskan.</p>
+                        <span class="badge bg-info text-dark">Sedang</span>
+                        <span class="badge bg-warning ms-2">Simple</span>
+                    </div>
+                </div>
+
+                <div class="card recipe-card">
+                    <div class="recipe-img">
+                        <img src="Assets/Bubur Kacang Hijau.jpg" alt="Bubur Kacang Hijau">
+                        <span class="recipe-time-badge"><i class="fas fa-clock"></i> 12 Menit</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Bubur Kacang Hijau</h5>
+                        <p class="card-text">Rasa nikmat hakiki dari perpaduan rasa santan, kacang hijau, ketan hitam, dan sepotong roti benar-benar menggugah selera.</p>
+                        <span class="badge bg-warning text-dark">Mudah</span>
+                        <span class="badge bg-success ms-2">Camilan</span>
+                    </div>
+                </div>
+
+                <div class="card recipe-card">
+                    <div class="recipe-img">
+                        <img src="Assets/Sup Bening Ayam.jpg" alt="Sop Ayam">
+                        <span class="recipe-time-badge"><i class="fas fa-clock"></i> 20 Menit</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Sup Bening Ayam</h5>
+                        <p class="card-text">Segar dengan kuah yang gurih, sup bening bisa jadi menu andalan sehari-hari yang sehat dan menyegarkan. Cocok dijadikan menu pendamping atau bahkan menu utama dikala musim hujan!</p>
+                        <span class="badge bg-warning text-dark">Mudah</span>
+                        <span class="badge bg-success ms-2">Favorit Keluarga</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORDER PAGE -->
+    <div id="orderPage" class="page">
+        <div class="breadcrumb-section">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li class="breadcrumb-item active">Order</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title" style="margin-top: 3rem;">Pesan Sekarang</h2>
+            
+            <div class="card order-card">
+                <div class="card-body">
+                    <h4 class="text-center mb-4">Form Pemesanan</h4>
+                    <form id="orderForm">
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-user"></i> Nama Lengkap</label>
+                            <input type="text" class="form-control" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" class="form-control" placeholder="contoh@email.com" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-phone"></i> Nomor Handphone</label>
+                            <input type="tel" class="form-control" placeholder="08xxxxxxxxxx" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-shopping-bag"></i> Pilih Produk</label>
+                            <select class="form-select" required>
+                                <option value="">-- Pilih Produk --</option>
+                                <option value="ayam-original">Mayo Chili Nugget - Rp 35.000</option>
+                                <option value="ayam-pedas">Mayo Seaweed Nugget - Rp 37.000</option>
+                                <option value="ayam-keju">Mayo Onion Nugget - Rp 42.000</option>
+                                <option value="ikan-tuna">Mayo Tuna Fish - Rp 40.000</option>
+                                <option value="udang">Mayo Shrimp Roll Nugget - Rp 45.000</option>
+                                <option value="sayur-mix">Mayo Vegetarian Nugget - Rp 33.000</option>
+                                <option value="ayam-wortel">Mayo Carrot Nugget - Rp 36.000</option>
+                                <option value="ayam-jagung">Mayo Corn Nugget - Rp 36.000</option>
+                                <option value="ayam-smokey">Mayo Smokey Nugget - Rp 38.000</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-box"></i> Jumlah (Pack)</label>
+                            <input type="number" class="form-control" min="1" value="1" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-map-marker-alt"></i> Alamat Pengiriman</label>
+                            <textarea class="form-control" rows="3" placeholder="Masukkan alamat lengkap pengiriman" required></textarea>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-comment"></i> Pesan / Pertanyaan (Opsional)</label>
+                            <textarea class="form-control" rows="3" placeholder="Ada pertanyaan atau permintaan khusus?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-cta w-100">
+                            <span style="position: relative; z-index: 1;">
+                                <i class="fas fa-paper-plane"></i> Kirim Pesanan
+                            </span>
+                        </button>
+                    </form>
+                    
+                    <div class="text-center mt-4">
+                        <h5>Atau Hubungi Kami Via</h5>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/ayundrm_/" class="social-icon" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://web.whatsapp.com/" class="social-icon" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.facebook.com/" class="social-icon" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.youtube.com/" class="social-icon" title="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROFILE PAGE -->
+    <div id="profilePage" class="page">
+        <div class="breadcrumb-section">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li class="breadcrumb-item active">Profile</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container profile-section">
+            <h2 class="section-title" style="margin-top: 3rem;">Tentang Kami</h2>
+            
+            <!-- About Us -->
+            <div class="profile-card">
+                <h4><i class="fas fa-building"></i> Profil Perusahaan</h4>
+                <p>Nuggyuuu hadir dari keinginan untuk menghadirkan camilan nugget ayam yang lebih menarik, variatif, dan sesuai dengan selera anak muda masa kini. Berawal dari ide sederhana untuk dijual di Car Free Day (CFD), Nuggyuuu kini berkembang menjadi produk frozen food pre-order yang dapat dinikmati masyarakat Jabodetabek. Dengan bahan dasar nugget ayam original yang dipadukan dengan topping khas seperti Mayo Chili, Mayo Seaweed, dan Mayo Onion. Nuggyuuu berkomitmen menghadirkan sensasi rasa baru dalam setiap gigitan serta terus berinovasi melalui varian rasa dan kualitas produk yang lebih baik.</p>
+            </div>
+
+            <!-- Visi Misi -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="profile-card">
+                        <h4><i class="fas fa-eye"></i> Visi</h4>
+                        <p>Menjadi brand nugget lokal paling dipercaya dan disukai masyarakat Indonesia karena rasa yang unik, kualitas premium, dan tampilan yang fun serta kekinian, sekaligus membawa kehangatan rumahan di setiap gigitan.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-card">
+                        <h4><i class="fas fa-bullseye"></i> Misi</h4>
+                        <ul>
+                            <li>Menghadirkan nugget berkualitas premium dengan rasa rumahan yang autentik.</li>
+                            <li>Mendukung penggunaan bahan lokal dan usaha berkelanjutan.</li>
+                            <li>Menjaga kebersihan, pelayanan ramah, dan kepuasan pelanggan.</li>
+                            <li>Berinovasi menciptakan varian produk yang sesuai selera Indonesia</li>
+                            <li>Memberikan pelayanan terbaik kepada seluruh pelanggan setia kami</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="profile-card">
+                <h4 class="mb-4"><i class="fas fa-phone-alt"></i> Hubungi Kami</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="contact-info">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <strong>Alamat</strong><br>
+                                Jl. Kembangan Raya No 8.<br>
+                                RT 03/RW 10, Kecamatan Kembangan<br/>
+                                Kelurahan Joglo, Jakarta Barat 11640<br>
+                                DKI Jakarta, Indonesia
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <strong>Email</strong><br>
+                                info@nuggyuuu.com<br>
+                                cs@nuggyuuu.com
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="contact-info">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <strong>Nomor Telepon</strong><br>
+                                (021) 2210-1995<br>
+                                0822-9872-7971 (WhatsApp)
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <strong>Jam Operasional</strong><br>
+                                Senin - Jumat: 09.00 - 17.00 WIB<br>
+                                Sabtu: 09.00 - 14.00 WIB<br>
+                                Minggu & Tanggal Merah: Tutup
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div class="profile-card text-center">
+                <h4 class="mb-4"><i class="fas fa-map"></i> Lokasi Kami</h4>
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.921939245795!2d106.81866357378073!3d-6.273994561414518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f303c158a91f%3A0xa35114a662ed22a8!2sCakrawala%20University!5e0!3m2!1sid!2sid!4v1761927984150!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+                <p class="mt-3">Kunjungi kantor dan pabrik kami untuk menyaksikan secara langsung proses produksi berkualitas tinggi dengan komitmen terhadap mutu yang memenuhi standar kebersihan nasional.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-section">
+                    <h5>NUGGYUUU</h5>
+                    <p>Nugget premium berkualitas tinggi untuk Nusantara. Cita rasa hakiki dengan sentuhan dapur rumahan!</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/ayundrm_/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://web.whatsapp.com/" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.youtube.com/" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 footer-section">
+                    <h5>Quick Link</h5>
+                    <a href="#" onclick="showPage('home')" class="footer-link">Home</a>
+                    <a href="#" onclick="showPage('product')" class="footer-link">Product</a>
+                    <a href="#" onclick="showPage('recipe')" class="footer-link">Recipe</a>
+                    <a href="#" onclick="showPage('order')" class="footer-link">Order</a>
+                    <a href="#" onclick="showPage('profile')" class="footer-link">Profile</a>
+                </div>
+                
+                <div class="col-md-4 footer-section">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Kembangan Raya No 8, Jakarta Barat</p>
+                    <p><i class="fas fa-phone"></i> (021) 2210-1995</p>
+                    <p><i class="fas fa-envelope"></i> info@nuggyuuu.com</p>
+                    <p><i class="fab fa-whatsapp"></i> 0822-9872-7971</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025. All Rights Reserved. Made with ❤️ in Indonesia<br/>Group 5 | Yoel, Titus, Ayu, Rasya, Riski.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loadingScreen').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Page Navigation
+        function showPage(pageName) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageName + 'Page').classList.add('active');
+            
+            // Update active nav link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Toggle Search Bar
+        function toggleSearch() {
+            const searchBar = document.getElementById('searchBar');
+            if (searchBar.style.display === 'none' || searchBar.style.display === '') {
+                searchBar.style.display = 'block';
+                document.getElementById('searchInput').focus();
+            } else {
+                searchBar.style.display = 'none';
+            }
+        }
+
+        // Redirect saat mengetik di Search Input
+        const searchInput = document.getElementById('searchInput');
+
+        if (searchInput) {
+            searchInput.addEventListener('keyup', function (event) {
+                const query = event.target.value.toLowerCase();
+
+                // Ketika tekan Enter
+                if (event.key === 'Enter') {
+                    if (query.includes('nugget') || query.includes('ayam')) {
+                        // Arahkan ke halaman Product
+                        window.location.href = 'product.html';
+                      } else {
+                        alert('Produk tidak ditemukan. Coba kata lain.');
+                      }
+                    }
+                });
+        }
+
+        // Search Content
+        function searchContent() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+            
+            productCards.forEach(card => {
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                const desc = card.querySelector('.card-text').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || desc.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = searchTerm === '' ? 'block' : 'none';
+                }
+            });
+        }
+
+        // Filter Products
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Product Detail Modal
+        let currentProduct = {};
+        
+        function showProductDetail(name, image, price, desc) {
+            currentProduct = { name, image, price, desc };
+            document.getElementById('modalProductName').textContent = name;
+            document.getElementById('modalProductImage').src = image;
+            document.getElementById('modalProductPrice').textContent = price;
+            document.getElementById('modalProductDesc').textContent = desc;
+            document.getElementById('quantityValue').textContent = '1';
+            
+            const modal = new bootstrap.Modal(document.getElementById('productModal'));
+            modal.show();
+        }
+
+        // Quantity Controls
+        function increaseQuantity() {
+            const quantityElem = document.getElementById('quantityValue');
+            let quantity = parseInt(quantityElem.textContent);
+            quantityElem.textContent = quantity + 1;
+        }
+
+        function decreaseQuantity() {
+            const quantityElem = document.getElementById('quantityValue');
+            let quantity = parseInt(quantityElem.textContent);
+            if (quantity > 1) {
+                quantityElem.textContent = quantity - 1;
+            }
+        }
+
+        // Add to Cart
+        function addToCart() {
+            const quantity = document.getElementById('quantityValue').textContent;
+            showToast(`${currentProduct.name} (${quantity}x) berhasil ditambahkan ke keranjang!`);
+            bootstrap.Modal.getInstance(document.getElementById('productModal')).hide();
+        }
+
+        // Buy Now
+        function buyNow() {
+            showToast(`Mengarahkan ke halaman pembayaran...`);
+            setTimeout(() => {
+                bootstrap.Modal.getInstance(document.getElementById('productModal')).hide();
+                showPage('order');
+            }, 1500);
+        }
+
+        // Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastMessage').textContent = message;
+            toast.style.display = 'block';
+            
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 3000);
+        }
+
+        // Scroll to Top Button
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.style.display = 'flex';
+            } else {
+                scrollTop.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Form Submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const orderForm = document.getElementById('orderForm');
+            if (orderForm) {
+                orderForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    showToast('Terima kasih! Pesanan Anda telah diterima. Tim kami akan segera menghubungi Anda.');
+                    orderForm.reset();
+                });
+            }
+        });
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
